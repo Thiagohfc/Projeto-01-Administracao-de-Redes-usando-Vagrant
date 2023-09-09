@@ -63,3 +63,16 @@ Os scripts de provisionamento de cada VM está localizado no diretório "Provide
 ## Acesso à Internet
 
 Por meio da conexão à internet recebida por bridge ao DHCP da VM3, a interface de rede interna da VM3 recebe essa conexão e atribui ela ao seu IP privado estático, que por sua vez está na mesma faixa dos IPs das VMs 1 e 2, cada uma dessas VMs estão configuradas com IP da VM3 atuando como Gateway padrão da rede, assim as VMs 1 e 2 dependem da VM3 para terem acesso à internet.
+
+```mermaid
+sequenceDiagram
+Interface Externa ->> DHCP VM3: Envia conexão
+DHCP VM3 ->> VM3: Estabelece conexão
+VM3 ->> VM1: Envia acesso à internet
+VM3 ->> VM2: Envia acesso à internet
+VM1 -->> VM2: Se comunica por IP
+VM1 -->> VM3: Se comunica por IP
+VM2 -->> VM1: Se comunica por IP
+VM2 -->> VM3: Se comunica por IP
+VM3 -->> VM1: Se comunica por IP
+VM3 -->> VM2: Se comunica por IP
