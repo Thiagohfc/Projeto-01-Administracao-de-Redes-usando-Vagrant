@@ -1,4 +1,9 @@
+# Laboratório de Administração de Redes
 
+Este projeto configura um ambiente de laboratório de administração de redes com 3 máquinas virtuais usando Vagrant.
+
+
+# Estrutura do Projeto
 - vagrantfile
 - Provisioners/
 	- provision_vm1
