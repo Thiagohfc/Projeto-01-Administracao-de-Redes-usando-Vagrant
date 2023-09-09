@@ -10,6 +10,7 @@ Este projeto configura um ambiente de laboratório de administração de redes c
 	- vm1_provision.sh
 	- vm2_provision.sh
 	- vm3_provision.sh
+- README.md
 
 ## Pré-requisitos
 
