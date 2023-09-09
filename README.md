@@ -4,11 +4,12 @@ Este projeto configura um ambiente de laboratório de administração de redes c
 
 
 # Estrutura do Projeto
+- shared_folder
 - vagrantfile
-- Provisioners/
-	- provision_vm1
-	- provision_vm2
-	- provision-vm3
+- provisioners/
+	- vm1_provision.sh
+	- vm2_provision.sh
+	- vm3_provision.sh
 
 ## Pré-requisitos
 
@@ -40,6 +41,7 @@ Este projeto configura um ambiente de laboratório de administração de redes c
 3. VM3
 	- IP Privado Estático (192.168.56.9)
 	- IP Público DHCP - bridge com a interface de rede externa.
+	- IP privado estático adicionado a mesma interface de rede do IP público DHCP.
 	-  DNS
 		- 8.8.8.8
 		- 8.8.4.4
