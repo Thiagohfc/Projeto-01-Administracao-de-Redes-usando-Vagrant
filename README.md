@@ -21,7 +21,7 @@ Este projeto configura um ambiente de laboratório de administração de redes c
 
 1. Clone o repositório do Github.
 2. Acesse-o pelo terminal e execute o comando "vagrant up" para iniciar a criação das VMs.
-3.  Verifique os status de cada VM com o comando "vagrant status" e veja se estão criadas ou não.
+3. Verifique os status de cada VM com o comando "vagrant status" e veja se estão criadas ou não.
 4. Após verificar os status de cada VM, digite "vagrant ssh" junto com o nome da VM (VM1, VM2 OU VM3) para iniciar o shell de cada uma.
 5. Por fim, desligue as VMs digitando "vagrant halt", e caso queira apaga-las, digite "vagrant destroy".
 
@@ -68,11 +68,11 @@ Por meio da conexão à internet recebida por bridge ao DHCP da VM3, a interface
 sequenceDiagram
 Interface Externa ->> DHCP VM3: Envia conexão
 DHCP VM3 ->> VM3: Estabelece conexão
-VM3 ->> VM1: Envia acesso à internet
-VM3 ->> VM2: Envia acesso à internet
-VM1 -->> VM2: Se comunica por IP
-VM1 -->> VM3: Se comunica por IP
-VM2 -->> VM1: Se comunica por IP
-VM2 -->> VM3: Se comunica por IP
-VM3 -->> VM1: Se comunica por IP
-VM3 -->> VM2: Se comunica por IP
+VM3 (IP Privado) ->> VM1 (IP Privado): Envia acesso à internet
+VM3 (IP Privado)->> VM2 (IP Privado): Envia acesso à internet
+VM1 (IP Privado)-->> VM2 (IP Privado): Se comunica por IP
+VM1 (IP Privado)-->> VM3 (IP Privado): Se comunica por IP
+VM2 (IP Privado)-->> VM1 (IP Privado): Se comunica por IP
+VM2 (IP Privado)-->> VM3 (IP Privado): Se comunica por IP
+VM3 (IP Privado)-->> VM1 (IP Privado): Se comunica por IP
+VM3 (IP Privado)-->> VM2 (IP Privado): Se comunica por IP
