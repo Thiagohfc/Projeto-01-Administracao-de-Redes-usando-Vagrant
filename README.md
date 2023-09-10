@@ -66,7 +66,7 @@ Por meio da conexão à internet recebida por bridge ao DHCP da VM3, a interface
 
 ```mermaid
 sequenceDiagram
-Interface Externa ->> DHCP VM3: Envia conexão
+Interface Externa ->> VM3 (DHCP): Envia conexão
 VM3 (DHCP) ->> VM3 (IP Privado): Estabelece conexão
 VM3 (IP Privado) ->> VM1 (IP Privado): Envia acesso à internet
 VM3 (IP Privado)->> VM2 (IP Privado): Envia acesso à internet
